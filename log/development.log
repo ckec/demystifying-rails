@@ -1,0 +1,2913 @@
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/" for 127.0.0.1 at 2023-11-23 16:10:32 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:14:15 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/hello_world"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:14:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/hello_world"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:18:15 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/hello_world"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:18:16 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/hello_world"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:18:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/hello_world"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:18:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/hello_world"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:19:51 +0100
+  
+AbstractController::ActionNotFound (The action 'hello_world' could not be found for ApplicationController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:22:56 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:23:08 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:23:09 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:23:09 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-23 16:23:18 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:39:57 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering inline template
+  Rendered inline template (0.6ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:49:05 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering inline template
+  Rendered inline template (0.2ms)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:49:47 +0100
+Completed 200 OK in 46852ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Processing by ApplicationController#hello_world as HTML
+  Rendering inline template
+  Rendered inline template (0.3ms)
+Completed 200 OK in 6751ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:50:30 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering inline template
+  Rendered inline template (0.7ms)
+Completed 200 OK in 34565ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:57:10 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html
+  Rendered application/hello_world.html (0.6ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:57:10 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html
+  Rendered application/hello_world.html (0.2ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 08:57:11 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html
+  Rendered application/hello_world.html (0.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world?name=John" for 127.0.0.1 at 2023-11-24 09:12:43 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"John"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 09:12:47 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world?name=John" for 127.0.0.1 at 2023-11-24 09:12:54 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"John"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world?name=John!" for 127.0.0.1 at 2023-11-24 09:12:58 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"John!"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 09:13:38 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 09:13:53 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 09:14:28 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/hello/john" for 127.0.0.1 at 2023-11-24 09:16:29 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"john"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (1.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/john" for 127.0.0.1 at 2023-11-24 09:16:36 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"john"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/john" for 127.0.0.1 at 2023-11-24 09:16:44 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"john"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/hello/jDAWG" for 127.0.0.1 at 2023-11-24 09:17:01 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"jDAWG"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/john" for 127.0.0.1 at 2023-11-24 09:17:06 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"john"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/STRING" for 127.0.0.1 at 2023-11-24 09:17:11 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"STRING"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/john" for 127.0.0.1 at 2023-11-24 09:17:17 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"john"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/johns" for 127.0.0.1 at 2023-11-24 09:17:21 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"johns"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/johns" for 127.0.0.1 at 2023-11-24 09:17:25 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"johns"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hello/FLOWS" for 127.0.0.1 at 2023-11-24 09:17:30 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"FLOWS"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/hello_world" for 127.0.0.1 at 2023-11-24 09:52:39 +0100
+Processing by ApplicationController#hello_world as HTML
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 09:52:47 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:06:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:06:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts/1" for 127.0.0.1 at 2023-11-24 10:07:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/list_posts/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/show_posts/1" for 127.0.0.1 at 2023-11-24 10:07:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/show_posts/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 10:07:22 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/2" for 127.0.0.1 at 2023-11-24 10:07:28 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/2" for 127.0.0.1 at 2023-11-24 10:09:29 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:09:30 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:10:14 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 10:10:15 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.9ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:10:21 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/hello/john" for 127.0.0.1 at 2023-11-24 10:26:01 +0100
+Processing by ApplicationController#hello_world as HTML
+  Parameters: {"name"=>"john"}
+  Rendering application/hello_world.html.erb
+  Rendered application/hello_world.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-24 10:26:03 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:28:23 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 10:28:27 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/create_post"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:49:00 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:49:00 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:49:01 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:49:02 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:49:34 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:49:34 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:49:39 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:49:42 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:49:47 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:49:55 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:49:57 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 10:53:35 +0100
+  
+AbstractController::ActionNotFound (The action 'create_post' could not be found for ApplicationController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 10:54:17 +0100
+  
+AbstractController::ActionNotFound (The action 'create_post' could not be found for ApplicationController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+rack (2.2.8) lib/rack/handler/webrick.rb:95:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/cvejka/.rbenv/versions/2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 10:55:40 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"Moj prvi post", "body"=>"lagano", "author"=>"Keca"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:55:40 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/4" for 127.0.0.1 at 2023-11-24 10:55:42 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"4"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 10:55:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 10:55:47 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:11:04 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 11:11:07 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (1.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    1: <html>
+    2:   <body>
+    3:     <form method="post" action="/update_post/<%= post['id'] %>">
+    4:       <label for="title"> Title</label>
+    5:       <input id="title" name="title" type="text" value="<%= post['title'] %>"/>
+    6:       <br /> <br />
+  
+app/views/application/edit_post.html.erb:3:in `[]'
+app/views/application/edit_post.html.erb:3:in `_app_views_application_edit_post_html_erb___2150200739275867891_47282084212320'
+app/controllers/application_controller.rb:42:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 11:11:25 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    1: <html>
+    2:   <body>
+    3:     <form method="post" action="/update_post/<%= post['id'] %>">
+    4:       <label for="title"> Title</label>
+    5:       <input id="title" name="title" type="text" value="<%= post['title'] %>"/>
+    6:       <br /> <br />
+  
+app/views/application/edit_post.html.erb:3:in `[]'
+app/views/application/edit_post.html.erb:3:in `_app_views_application_edit_post_html_erb___2150200739275867891_47282084615800'
+app/controllers/application_controller.rb:42:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 11:11:58 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (1.2ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    1: <html>
+    2:   <body>
+    3: 
+    4:     <form method="post" action="/update_post/<%= post['id'] %>">
+    5: 
+    6:       <label for="title"> Title</label>
+    7:       <input id="title" name="title" type="text" value="<%= post['title'] %>"/>
+  
+app/views/application/edit_post.html.erb:4:in `[]'
+app/views/application/edit_post.html.erb:4:in `_app_views_application_edit_post_html_erb___2150200739275867891_47282085166720'
+app/controllers/application_controller.rb:42:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 11:13:19 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (1.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    1: <html>
+    2:   <body>
+    3:     <%= post['id'] %>
+    4:     <form method="post" action="/update_post/<%= post['id'] %>">
+    5: 
+    6:       <label for="title"> Title</label>
+  
+app/views/application/edit_post.html.erb:3:in `[]'
+app/views/application/edit_post.html.erb:3:in `_app_views_application_edit_post_html_erb___2150200739275867891_47282085657660'
+app/controllers/application_controller.rb:42:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 11:14:47 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 11:14:50 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:15:21 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 11:15:22 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:15:23 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/3" for 127.0.0.1 at 2023-11-24 11:15:25 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"3"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:15:26 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/4" for 127.0.0.1 at 2023-11-24 11:15:27 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"4"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/update_post/4" for 127.0.0.1 at 2023-11-24 11:15:31 +0100
+Processing by ApplicationController#update_post as HTML
+  Parameters: {"title"=>"Moj prvi post", "body"=>"lagano", "author"=>"Kecayoo", "id"=>"4"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:15:31 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/4" for 127.0.0.1 at 2023-11-24 11:15:32 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"4"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:15:36 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:22:10 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 11:22:11 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:22:11 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 11:22:12 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/update_post/1" for 127.0.0.1 at 2023-11-24 11:22:13 +0100
+Processing by ApplicationController#update_post as HTML
+  Parameters: {"title"=>"Blog 1", "body"=>"Lorem ipsum dolor sit amet.", "author"=>"Brad", "id"=>"1"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:22:13 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:22:15 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:22:16 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:30:18 +0100
+  
+SyntaxError (/home/cvejka/Documents/projects/demystifying_rails_app_template/app/controllers/application_controller.rb:59: syntax error, unexpected [, expecting do or '{' or '('
+...s WHERE posts.id = ?", params ['id'])
+...                              ^
+/home/cvejka/Documents/projects/demystifying_rails_app_template/app/controllers/application_controller.rb:59: syntax error, unexpected ')', expecting end
+...E posts.id = ?", params ['id'])
+...                              ^):
+  
+app/controllers/application_controller.rb:59: syntax error, unexpected [, expecting do or '{' or '('
+app/controllers/application_controller.rb:59: syntax error, unexpected ')', expecting end
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:39 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/1" for 127.0.0.1 at 2023-11-24 11:31:43 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:43 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:50 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:50 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:50 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:51 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:53 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:53 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:53 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:54 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:54 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:54 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/2" for 127.0.0.1 at 2023-11-24 11:31:58 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:31:58 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (15.3ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/3" for 127.0.0.1 at 2023-11-24 11:32:09 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"3"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:09 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/4" for 127.0.0.1 at 2023-11-24 11:32:09 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"4"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:09 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:32:11 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:32:28 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"g", "body"=>"g", "author"=>"g"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:28 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:32:30 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:32:32 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"g", "body"=>"g", "author"=>"g"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:32 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/5" for 127.0.0.1 at 2023-11-24 11:32:33 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:33 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/6" for 127.0.0.1 at 2023-11-24 11:32:34 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:34 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:32:35 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:32:39 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"f", "body"=>"f", "author"=>"f"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:39 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:32:40 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:32:42 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"f", "body"=>"f", "author"=>"f"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:42 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/8" for 127.0.0.1 at 2023-11-24 11:32:46 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"8"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/update_post/8" for 127.0.0.1 at 2023-11-24 11:32:50 +0100
+Processing by ApplicationController#update_post as HTML
+  Parameters: {"title"=>"g", "body"=>"g", "author"=>"g", "id"=>"8"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:50 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:32:52 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:32:54 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"s", "body"=>"s", "author"=>"s"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:54 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/7" for 127.0.0.1 at 2023-11-24 11:32:55 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"7"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:55 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/8" for 127.0.0.1 at 2023-11-24 11:32:57 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"8"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:57 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/9" for 127.0.0.1 at 2023-11-24 11:32:57 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"9"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:32:57 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:33:42 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.4ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:33:45 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"s", "body"=>"s", "author"=>"s"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:33:45 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:33:46 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:33:48 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"a", "body"=>"a", "author"=>"a"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:33:48 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/10" for 127.0.0.1 at 2023-11-24 11:33:50 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"10"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:33:50 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:35:10 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:35:33 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:35:40 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/11" for 127.0.0.1 at 2023-11-24 11:37:53 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"11"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:37:53 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:38:13 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/1" for 127.0.0.1 at 2023-11-24 11:39:51 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:46:23 +0100
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 403409ms (ActiveRecord: 0.0ms)
+
+
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/3" for 127.0.0.1 at 2023-11-24 11:46:41 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"3"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:46:41 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/2" for 127.0.0.1 at 2023-11-24 11:46:42 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:46:42 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:48:50 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 11:48:52 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 11:48:54 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"d", "body"=>"d", "author"=>"d"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:48:54 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/12" for 127.0.0.1 at 2023-11-24 11:48:55 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"12"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 11:48:55 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 12:19:10 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:15:in `show_post'
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 12:23:48 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:15:in `show_post'
+Started GET "/" for 127.0.0.1 at 2023-11-24 12:24:04 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:24:09 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_post_by_id' for #<ApplicationController:0x00007fab24b30b10>):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:48 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:49 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:53 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:53 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:54 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:55 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:25:55 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 12:26:01 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 12:26:03 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/show_post/2" for 127.0.0.1 at 2023-11-24 12:26:05 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:15:in `show_post'
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 12:26:39 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 12:27:49 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/show_post/2" for 127.0.0.1 at 2023-11-24 12:28:20 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:15:in `show_post'
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 12:28:23 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for Post:Class):
+  
+app/controllers/application_controller.rb:33:in `edit_post'
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 12:29:02 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 12:29:03 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 12:31:10 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Hash:0x00005644a1b7eb20>):
+    4:       <% posts.each do |post| %>
+    5:       <div class="post">
+    6:         <h2 class="title">
+    7:           <%= post.title %>
+    8:           <a href="/show_post/<%= post.id %>"><%= post.title %></a>
+    9:         </h2>
+   10:         <small class="meta">
+  
+app/views/application/list_posts.html.erb:7:in `block in _app_views_application_list_posts_html_erb__4425850749432720523_47426385480580'
+app/views/application/list_posts.html.erb:4:in `each'
+app/views/application/list_posts.html.erb:4:in `_app_views_application_list_posts_html_erb__4425850749432720523_47426385480580'
+app/controllers/application_controller.rb:11:in `list_posts'
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 12:31:52 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:41 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:41 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:42 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:42 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:45 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:45 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:45 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:10:49 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (1.3ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for #<Post:0x00007fab24c88f80>):
+    4:       <% posts.each do |post| %>
+    5:       <div class="post">
+    6:         <h2 class="title">
+    7:           <%= post['title'] %>
+    8:           <a href="/show_post/<%= post['id'] %>"><%= post['title'] %></a>
+    9:         </h2>
+   10:         <small class="meta">
+  
+app/views/application/list_posts.html.erb:7:in `block in _app_views_application_list_posts_html_erb__4425850749432720523_70186516650720'
+app/views/application/list_posts.html.erb:4:in `each'
+app/views/application/list_posts.html.erb:4:in `_app_views_application_list_posts_html_erb__4425850749432720523_70186516650720'
+app/controllers/application_controller.rb:11:in `list_posts'
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:11:04 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 13:11:05 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:11:07 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/2" for 127.0.0.1 at 2023-11-24 13:11:08 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:11:09 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 13:11:10 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:11:11 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:11:14 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:11:14 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:16:41 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:16:42 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:16:42 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:16:43 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:16:44 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:16:44 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:16:46 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:16:49 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"s", "body"=>"", "author"=>""}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:16:49 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/3" for 127.0.0.1 at 2023-11-24 13:21:51 +0100
+  
+SyntaxError (/home/cvejka/Documents/projects/demystifying_rails_app_template/app/controllers/application_controller.rb:67: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:67: syntax error, unexpected end-of-input, expecting end
+Started POST "/__web_console/repl_sessions/1b92ffac2071a022f8d09f6f586d62f2/trace" for 127.0.0.1 at 2023-11-24 13:22:30 +0100
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:22:39 +0100
+  
+SyntaxError (/home/cvejka/Documents/projects/demystifying_rails_app_template/app/controllers/application_controller.rb:67: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:67: syntax error, unexpected end-of-input, expecting end
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 13:22:49 +0100
+  
+SyntaxError (/home/cvejka/Documents/projects/demystifying_rails_app_template/app/controllers/application_controller.rb:67: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:67: syntax error, unexpected end-of-input, expecting end
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 13:25:07 +0100
+  
+SyntaxError (/home/cvejka/Documents/projects/demystifying_rails_app_template/app/controllers/application_controller.rb:69: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:69: syntax error, unexpected end-of-input, expecting end
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 13:26:17 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/3" for 127.0.0.1 at 2023-11-24 13:26:22 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"3"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/2" for 127.0.0.1 at 2023-11-24 13:26:25 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/update_post/2" for 127.0.0.1 at 2023-11-24 13:26:27 +0100
+Processing by ApplicationController#update_post as HTML
+  Parameters: {"title"=>"Blog 2", "body"=>"Lorem ipsum dolor sit amet.", "author"=>"Chris", "id"=>"2"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:26:27 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:26:38 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:38 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:39 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:39 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:40 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:40 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:41 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:41 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:41 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:41 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:26:42 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:26 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:26 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:27 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:27 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:27 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:28 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:30:35 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"jijiji", "body"=>"l", "author"=>"l"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:30:35 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_post/13" for 127.0.0.1 at 2023-11-24 13:30:39 +0100
+Processing by ApplicationController#delete_post as HTML
+  Parameters: {"id"=>"13"}
+Redirected to http://localhost:3000/list_posts
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:30:39 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 13:36:39 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 13:36:40 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:36:43 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (3.4ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<Post:0x00005644a24184c0>):
+    2:   <body>
+    3: 
+    4:     <div class="errors">
+    5:       <% post.errors.each do |attribute, error| %>
+    6:         <p class="error" style="color: orange">
+    7:           <%= attribute %>: <%= error %>
+    8:         </p>
+  
+app/views/application/new_post.html.erb:5:in `_app_views_application_new_post_html_erb__3882928674107866234_47426389991720'
+app/controllers/application_controller.rb:23:in `new_post'
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:37:46 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (2.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<Post:0x00007fab247ff978>):
+    2:   <body>
+    3: 
+    4:     <div class="errors">
+    5:       <% post.errors.each do |attribute, error| %>
+    6:         <p class="error" style="color: orange">
+    7:           <%= attribute %>: <%= error %>
+    8:         </p>
+  
+app/views/application/new_post.html.erb:5:in `_app_views_application_new_post_html_erb__3882928674107866234_70186514246780'
+app/controllers/application_controller.rb:23:in `new_post'
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:37:47 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (1.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for #<Post:0x00007fab24caf018>):
+    2:   <body>
+    3: 
+    4:     <div class="errors">
+    5:       <% post.errors.each do |attribute, error| %>
+    6:         <p class="error" style="color: orange">
+    7:           <%= attribute %>: <%= error %>
+    8:         </p>
+  
+app/views/application/new_post.html.erb:5:in `_app_views_application_new_post_html_erb__3882928674107866234_70186516703720'
+app/controllers/application_controller.rb:23:in `new_post'
+Started GET "/new_post" for 127.0.0.1 at 2023-11-24 13:38:09 +0100
+Processing by ApplicationController#new_post as HTML
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 13:38:11 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:86)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/cvejka/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started POST "/create_post" for 127.0.0.1 at 2023-11-24 14:08:06 +0100
+Processing by ApplicationController#create_post as HTML
+  Parameters: {"title"=>"", "body"=>"", "author"=>""}
+  Rendering application/new_post.html.erb
+  Rendered application/new_post.html.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/list_posts" for 127.0.0.1 at 2023-11-24 14:08:08 +0100
+Processing by ApplicationController#list_posts as HTML
+  Rendering application/list_posts.html.erb
+  Rendered application/list_posts.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/3" for 127.0.0.1 at 2023-11-24 14:08:10 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"3"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/2" for 127.0.0.1 at 2023-11-24 14:08:12 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"2"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_post/1" for 127.0.0.1 at 2023-11-24 14:08:13 +0100
+Processing by ApplicationController#show_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/show_post.html.erb
+  Rendered application/show_post.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit_post/1" for 127.0.0.1 at 2023-11-24 14:08:15 +0100
+Processing by ApplicationController#edit_post as HTML
+  Parameters: {"id"=>"1"}
+  Rendering application/edit_post.html.erb
+  Rendered application/edit_post.html.erb (0.6ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
